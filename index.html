@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>REGALO</title>
+  <style>
+       body {
+          font-family: 'Arial', sans-serif;
+          background-color: #000;
+          color: #fff;
+          margin: 0;
+          padding: 0;
+          text-align: center; 
+          align-items: center;
+          align-items: center;
+          justify-content: center;
+      }
+      
+      h1 {
+          color: #e63946;
+          font-size: 2.5em;
+      }
+    
+      .photo-container {
+          position: relative;
+          max-width: 400px;
+          margin: 20px auto;
+          overflow: hidden;
+      }
+      .photo {
+          width: 100%;
+          display: none;
+          transition: opacity 1s ease-in-out;
+      }
+      .active {
+          display: block;
+          opacity: 1;
+      }
+      .music {
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+      }
+      .letter {
+          max-width: 600px;
+          margin: 20px auto;
+          line-height: 1.6;
+          font-size: 1.2em;
+      }
+      .heart {
+          font-size: 50px;
+          color: #cc1928;
+          position: absolute;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+    
+      .video-container {
+        margin: 20px auto;
+      }
+      
+  </style>
+</head>
+<body>
+
+  <h1>Mi Querida Esposa </h1>
+
+  <div class="letter">
+      <p>Desde el momento en que te conocí, supe que había encontrado a alguien especial. Cada día a tu lado es una nueva aventura que atesoro profundamente.</p>
+      <p>Recuerdo la primera vez que nos conocimos, cuando usted salia y chocamos por cuestión del destino. Fue mágico y desde entonces, mi amor por ti solo ha crecido.</p>
+      <p>Te amo por todo lo que has hecho por mi. Eres mi apoyo, mi inspiración y mi mejor amiga.</p>
+      <p>Espero que sigamos creando recuerdos juntos.</p>
+      <p>Con todo mi amor,</p>
+      <p>Tu Esposo</p>
+  </div>
+
+  <div class="photo-container">
+    <img src="foto1.jpg" alt="Recuerdo 1" class="photo active" />
+    <img src="foto2.jpg" alt="Recuerdo 2" class="photo" />
+    <img src="foto3.jpg" alt="Recuerdo 2" class="photo" />
+  </div>
+
+  <div class="video-container"></div>
+    <video width="200" controls>
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+  </div>
+
+  
+
+  <div class="music">
+    <audio controls autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+  </div>
+
+  <div class="heart"></div>
+    <i class="fas fa-heart"></i>
+  </div>
+
+  <script>
+      let currentIndex = 0;
+      const photos = document.querySelectorAll('.photo');
+
+      function showNextPhoto() {
+          photos[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % photos.length;
+          photos[currentIndex].classList.add('active');
+      }
+
+      setInterval(showNextPhoto, 3000); // Cambia la imagen cada 3 segundos
+
+      document.addEventListener('click', function() {
+        var audio = document.getElementById('music');
+        audio.muted = false;
+  });
+  </script>
+
+</body>
+</html>
